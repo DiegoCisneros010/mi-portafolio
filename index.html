@@ -1,235 +1,120 @@
-<!-- FLEXBOX -->
-  <section id="flexbox" class="bg-surface">
+<!-- ALINEACIÓN FLEXBOX -->
+  <section id="alineacion">
     <div class="container">
       <div class="section-label">
-        <h2>CSS Flexbox</h2>
-        <span class="pill">FLEXBOX</span>
+        <h2>Alineación con Flexbox</h2>
+        <span class="pill">ALIGNMENT</span>
       </div>
       <p class="section-desc">
-        Flexbox es un modelo de diseño CSS que permite distribuir y alinear elementos
-        dentro de un contenedor de forma flexible. Aquí se muestran sus propiedades
-        principales aplicadas a elementos reales del portfolio.
+        Flexbox ofrece control preciso sobre la alineación de elementos en ambos ejes.
+        Aquí se demuestran las propiedades de alineación aplicadas a elementos reales.
       </p>
 
-      <!-- Ejemplo 1: flex-direction -->
+      <!-- Ejemplo 1: align-self -->
       <div class="flex-demo">
-        <h3 class="flex-demo-title">Ejemplo 1 — <code class="inline-code">flex-direction</code></h3>
-        <p class="flex-demo-desc">Controla la dirección en que se colocan los elementos hijos dentro del contenedor.</p>
-        <div class="flex-showcase">
-          <div class="flex-showcase-item">
-            <span class="flex-showcase-label">row (default)</span>
-            <div class="flex-box flex-row">
-              <div class="flex-item">A</div>
-              <div class="flex-item">B</div>
-              <div class="flex-item">C</div>
-            </div>
+        <h3 class="flex-demo-title">Ejemplo 1 — <code class="inline-code">align-self</code></h3>
+        <p class="flex-demo-desc">Cada hijo puede alinearse de forma individual, sobreescribiendo el <code class="inline-code">align-items</code> del padre.</p>
+        <div class="align-self-box">
+          <div class="as-item as-start">
+            <span>flex-start</span>
           </div>
-          <div class="flex-showcase-item">
-            <span class="flex-showcase-label">row-reverse</span>
-            <div class="flex-box flex-row-reverse">
-              <div class="flex-item">A</div>
-              <div class="flex-item">B</div>
-              <div class="flex-item">C</div>
-            </div>
+          <div class="as-item as-center">
+            <span>center</span>
           </div>
-          <div class="flex-showcase-item">
-            <span class="flex-showcase-label">column</span>
-            <div class="flex-box flex-col">
-              <div class="flex-item">A</div>
-              <div class="flex-item">B</div>
-              <div class="flex-item">C</div>
-            </div>
+          <div class="as-item as-end">
+            <span>flex-end</span>
+          </div>
+          <div class="as-item as-stretch">
+            <span>stretch</span>
+          </div>
+          <div class="as-item as-baseline">
+            <span style="font-size:1.4rem;">baseline</span>
           </div>
         </div>
       </div>
 
-      <!-- Ejemplo 2: justify-content -->
+      <!-- Ejemplo 2: align-content -->
       <div class="flex-demo">
-        <h3 class="flex-demo-title">Ejemplo 2 — <code class="inline-code">justify-content</code></h3>
-        <p class="flex-demo-desc">Alinea los elementos a lo largo del eje principal (horizontal por defecto).</p>
-        <div class="flex-justify-grid">
-          <div class="flex-justify-item">
+        <h3 class="flex-demo-title">Ejemplo 2 — <code class="inline-code">align-content</code></h3>
+        <p class="flex-demo-desc">Controla cómo se distribuyen las filas cuando hay múltiples líneas (requiere <code class="inline-code">flex-wrap: wrap</code>).</p>
+        <div class="align-content-grid">
+          <div class="ac-demo-item">
             <span class="flex-showcase-label">flex-start</span>
-            <div class="flex-box jc-start">
-              <div class="flex-item">1</div>
-              <div class="flex-item">2</div>
-              <div class="flex-item">3</div>
+            <div class="ac-box ac-start">
+              <div class="ac-item">1</div><div class="ac-item">2</div>
+              <div class="ac-item">3</div><div class="ac-item">4</div>
+              <div class="ac-item">5</div><div class="ac-item">6</div>
             </div>
           </div>
-          <div class="flex-justify-item">
+          <div class="ac-demo-item">
             <span class="flex-showcase-label">center</span>
-            <div class="flex-box jc-center">
-              <div class="flex-item">1</div>
-              <div class="flex-item">2</div>
-              <div class="flex-item">3</div>
+            <div class="ac-box ac-center">
+              <div class="ac-item">1</div><div class="ac-item">2</div>
+              <div class="ac-item">3</div><div class="ac-item">4</div>
+              <div class="ac-item">5</div><div class="ac-item">6</div>
             </div>
           </div>
-          <div class="flex-justify-item">
+          <div class="ac-demo-item">
             <span class="flex-showcase-label">flex-end</span>
-            <div class="flex-box jc-end">
-              <div class="flex-item">1</div>
-              <div class="flex-item">2</div>
-              <div class="flex-item">3</div>
+            <div class="ac-box ac-end">
+              <div class="ac-item">1</div><div class="ac-item">2</div>
+              <div class="ac-item">3</div><div class="ac-item">4</div>
+              <div class="ac-item">5</div><div class="ac-item">6</div>
             </div>
           </div>
-          <div class="flex-justify-item">
+          <div class="ac-demo-item">
             <span class="flex-showcase-label">space-between</span>
-            <div class="flex-box jc-between">
-              <div class="flex-item">1</div>
-              <div class="flex-item">2</div>
-              <div class="flex-item">3</div>
-            </div>
-          </div>
-          <div class="flex-justify-item">
-            <span class="flex-showcase-label">space-around</span>
-            <div class="flex-box jc-around">
-              <div class="flex-item">1</div>
-              <div class="flex-item">2</div>
-              <div class="flex-item">3</div>
-            </div>
-          </div>
-          <div class="flex-justify-item">
-            <span class="flex-showcase-label">space-evenly</span>
-            <div class="flex-box jc-evenly">
-              <div class="flex-item">1</div>
-              <div class="flex-item">2</div>
-              <div class="flex-item">3</div>
+            <div class="ac-box ac-between">
+              <div class="ac-item">1</div><div class="ac-item">2</div>
+              <div class="ac-item">3</div><div class="ac-item">4</div>
+              <div class="ac-item">5</div><div class="ac-item">6</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Ejemplo 3: align-items -->
+      <!-- Ejemplo 3: Centrado perfecto -->
       <div class="flex-demo">
-        <h3 class="flex-demo-title">Ejemplo 3 — <code class="inline-code">align-items</code></h3>
-        <p class="flex-demo-desc">Alinea los elementos a lo largo del eje secundario (vertical por defecto).</p>
-        <div class="flex-showcase">
-          <div class="flex-showcase-item">
-            <span class="flex-showcase-label">flex-start</span>
-            <div class="flex-box flex-tall ai-start">
-              <div class="flex-item">A</div>
-              <div class="flex-item flex-item--tall">B</div>
-              <div class="flex-item">C</div>
-            </div>
-          </div>
-          <div class="flex-showcase-item">
-            <span class="flex-showcase-label">center</span>
-            <div class="flex-box flex-tall ai-center">
-              <div class="flex-item">A</div>
-              <div class="flex-item flex-item--tall">B</div>
-              <div class="flex-item">C</div>
-            </div>
-          </div>
-          <div class="flex-showcase-item">
-            <span class="flex-showcase-label">flex-end</span>
-            <div class="flex-box flex-tall ai-end">
-              <div class="flex-item">A</div>
-              <div class="flex-item flex-item--tall">B</div>
-              <div class="flex-item">C</div>
-            </div>
-          </div>
-          <div class="flex-showcase-item">
-            <span class="flex-showcase-label">stretch</span>
-            <div class="flex-box flex-tall ai-stretch">
-              <div class="flex-item">A</div>
-              <div class="flex-item flex-item--tall">B</div>
-              <div class="flex-item">C</div>
+        <h3 class="flex-demo-title">Ejemplo 3 — Centrado perfecto con Flexbox</h3>
+        <p class="flex-demo-desc">La combinación de <code class="inline-code">justify-content: center</code> y <code class="inline-code">align-items: center</code> centra cualquier elemento perfectamente.</p>
+        <div class="perfect-center-demo">
+          <div class="perfect-center-box">
+            <div class="perfect-center-content">
+              <span>🚀</span>
+              <p>Centrado perfecto</p>
+              <small>justify-content: center<br/>align-items: center</small>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Ejemplo 4: flex-wrap y flex aplicado -->
+      <!-- Ejemplo 4: Tarjetas de misión alineadas -->
       <div class="flex-demo">
-        <h3 class="flex-demo-title">Ejemplo 4 — <code class="inline-code">flex-wrap</code> y <code class="inline-code">flex-grow</code></h3>
-        <p class="flex-demo-desc">Aplicado a las tecnologías que uso — los elementos se envuelven y crecen para llenar el espacio.</p>
-        <div class="flex-tech-container">
-          <div class="flex-tech-item">
-            <span>💻</span> HTML5
+        <h3 class="flex-demo-title">Ejemplo 4 — Alineación aplicada a tarjetas de misión</h3>
+        <p class="flex-demo-desc">Tarjetas con alturas distintas que se alinean usando Flexbox. El contenido interno usa <code class="inline-code">flex-direction: column</code> y <code class="inline-code">justify-content: space-between</code>.</p>
+        <div class="mission-cards">
+          <div class="mission-card">
+            <div class="mission-icon">🛸</div>
+            <h4>Misión LEO</h4>
+            <p>Órbita baja terrestre. Altitud entre 200 y 2,000 km. Ideal para satélites de observación y la ISS.</p>
+            <span class="mission-badge">200–2,000 km</span>
           </div>
-          <div class="flex-tech-item flex-tech-item--wide">
-            <span>🎨</span> CSS3 &amp; Flexbox
+          <div class="mission-card">
+            <div class="mission-icon">🌕</div>
+            <h4>Misión Lunar</h4>
+            <p>Viaje a la Luna a 384,400 km de distancia. Requiere una velocidad de escape de 11.2 km/s y varios días de trayecto.</p>
+            <span class="mission-badge">384,400 km</span>
           </div>
-          <div class="flex-tech-item">
-            <span>🐍</span> Python
-          </div>
-          <div class="flex-tech-item">
-            <span>🔧</span> Git
-          </div>
-          <div class="flex-tech-item flex-tech-item--wide">
-            <span>🚀</span> GitHub Pages
-          </div>
-          <div class="flex-tech-item">
-            <span>📐</span> Matemáticas
+          <div class="mission-card">
+            <div class="mission-icon">🔴</div>
+            <h4>Misión Marte</h4>
+            <p>El siguiente gran objetivo de la exploración espacial humana. Entre 54 y 401 millones de km dependiendo de la alineación orbital.</p>
+            <span class="mission-badge">54–401 M km</span>
           </div>
         </div>
-      </div>
-
-      <!-- Tabla resumen -->
-      <div class="flex-demo">
-        <h3 class="flex-demo-title">Resumen de propiedades Flexbox</h3>
-        <div class="props-table-wrapper">
-          <table class="props-table">
-            <thead>
-              <tr>
-                <th>Propiedad</th>
-                <th>Se aplica en</th>
-                <th>Descripción</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>display: flex</code></td>
-                <td>Contenedor</td>
-                <td>Activa el modo Flexbox en el contenedor</td>
-              </tr>
-              <tr>
-                <td><code>flex-direction</code></td>
-                <td>Contenedor</td>
-                <td>Define la dirección del eje principal (row / column)</td>
-              </tr>
-              <tr>
-                <td><code>justify-content</code></td>
-                <td>Contenedor</td>
-                <td>Alineación en el eje principal</td>
-              </tr>
-              <tr>
-                <td><code>align-items</code></td>
-                <td>Contenedor</td>
-                <td>Alineación en el eje secundario</td>
-              </tr>
-              <tr>
-                <td><code>flex-wrap</code></td>
-                <td>Contenedor</td>
-                <td>Permite que los elementos se envuelvan en varias filas</td>
-              </tr>
-              <tr>
-                <td><code>gap</code></td>
-                <td>Contenedor</td>
-                <td>Espacio entre elementos hijos</td>
-              </tr>
-              <tr>
-                <td><code>flex-grow</code></td>
-                <td>Hijo</td>
-                <td>Cuánto crece un hijo para llenar el espacio disponible</td>
-              </tr>
-              <tr>
-                <td><code>flex-shrink</code></td>
-                <td>Hijo</td>
-                <td>Cuánto se encoge un hijo si no hay suficiente espacio</td>
-              </tr>
-              <tr>
-                <td><code>align-self</code></td>
-                <td>Hijo</td>
-                <td>Alineación individual que sobreescribe align-items</td>
-              </tr>
-              <tr>
-                <td><code>order</code></td>
-                <td>Hijo</td>
-                <td>Controla el orden visual de un elemento hijo</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="inherit-note" style="margin-top:1.25rem;">
+          <span>💡</span>
+          <p>Las 3 tarjetas tienen alturas distintas por su contenido, pero se alinean al mismo nivel gracias a <code>align-items: stretch</code> en el contenedor y <code>justify-content: space-between</code> en cada tarjeta interna.</p>
         </div>
       </div>
 
