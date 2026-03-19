@@ -1,369 +1,138 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio personal de Diego Eduardo Cisneros — Estudiante de Ingeniería con interés en tecnología aeronáutica y espacial." />
-  <title>Diego Eduardo Cisneros | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-  <nav>
-    <div class="nav-logo">Diego<span>.dev</span></div>
-    <ul class="nav-links">
-      <li><a href="#perfil">Perfil</a></li>
-      <li><a href="#sobre-mi">Sobre mí</a></li>
-      <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#trayectoria">Trayectoria</a></li>
-      <li><a href="#aeronautica">Aeronáutica</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
-
-  <header class="hero">
-    <div class="hero-inner">
-      <div class="hero-avatar">🚀</div>
-      <div class="hero-tag">🚀 Ingeniería · Tecnología · Espacio</div>
-      <h1>Diego Eduardo<br/><span class="neon">Cisneros</span></h1>
-      <p>Estudiante de ingeniería apasionado por el sector tecnológico y la exploración aeronáutica y espacial. Construyendo el futuro, un proyecto a la vez.</p>
-      <div class="hero-btns">
-        <a href="#proyectos" class="btn btn-primary">Ver mis proyectos ↓</a>
-        <a href="#contacto" class="btn btn-ghost">Contáctame</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- TARJETA DE PERFIL -->
-  <section id="perfil" class="bg-surface">
+<!-- HERENCIA DE ESTILOS -->
+  <section id="herencia">
     <div class="container">
       <div class="section-label">
-        <h2>Tarjeta de Perfil</h2>
-        <span class="pill">PROFILE CARD</span>
+        <h2>Herencia de Estilos CSS</h2>
+        <span class="pill">INHERITANCE</span>
       </div>
-      <div class="profile-card-wrapper">
-        <div class="profile-card">
-          <div class="profile-card-glow"></div>
-          <div class="profile-card-inner">
-            <div class="profile-avatar">🚀</div>
-            <h3 class="profile-name">Diego Eduardo Cisneros</h3>
-            <p class="profile-role">Estudiante de Ingeniería</p>
-            <p class="profile-sub">Ingeniería Aeronáutica &amp; Espacial</p>
-            <div class="profile-divider"></div>
-            <div class="profile-stats">
-              <div class="profile-stat"><span>1.5</span><p>Años</p></div>
-              <div class="profile-stat"><span>5</span><p>Proyectos</p></div>
-              <div class="profile-stat"><span>∞</span><p>Curiosidad</p></div>
+      <p class="section-desc">
+        En CSS, los elementos hijos heredan propiedades de sus padres como
+        <code class="inline-code">color</code>, <code class="inline-code">font-family</code>,
+        <code class="inline-code">font-size</code> y <code class="inline-code">line-height</code>.
+        Aquí se muestra cómo funciona en la práctica.
+      </p>
+
+      <!-- Ejemplo 1: Herencia de tipografía -->
+      <div class="inherit-demo">
+        <h3 class="inherit-demo-title">Ejemplo 1 — Herencia de tipografía</h3>
+        <div class="inherit-parent">
+          <p class="inherit-label">🔵 Elemento padre — define: <code>font-family</code>, <code>color</code>, <code>line-height</code></p>
+          <div class="inherit-child">
+            <p class="inherit-label">↳ Hijo 1 — hereda todo del padre</p>
+            <div class="inherit-grandchild">
+              <p class="inherit-label">↳ ↳ Nieto — sigue heredando aunque esté 2 niveles abajo</p>
             </div>
-            <div class="profile-tags">
-              <span class="profile-tag">Python</span>
-              <span class="profile-tag">HTML</span>
-              <span class="profile-tag">CSS</span>
-              <span class="profile-tag">Git</span>
-              <span class="profile-tag">Fluidos</span>
-            </div>
-            <a href="#contacto" class="btn btn-primary profile-btn">Contactar</a>
+          </div>
+          <div class="inherit-child inherit-child--override">
+            <p class="inherit-label">↳ Hijo 2 — hereda pero <strong>sobreescribe</strong> el color</p>
           </div>
         </div>
-        <div class="profile-card-desc">
-          <h3>Propiedades CSS usadas en esta tarjeta</h3>
-          <ul class="css-props-list">
-            <li><code>transform: rotateY()</code> — efecto 3D al pasar el cursor</li>
-            <li><code>perspective</code> — profundidad del efecto 3D</li>
-            <li><code>transition</code> — animaciones suaves</li>
-            <li><code>box-shadow</code> — sombra y brillo neon</li>
-            <li><code>border-radius</code> — bordes redondeados</li>
-            <li><code>background: linear-gradient()</code> — fondo degradado</li>
-            <li><code>animation: @keyframes</code> — animación de entrada</li>
-            <li><code>display: flex</code> — alineación de elementos</li>
-          </ul>
+      </div>
+
+      <!-- Ejemplo 2: Herencia en cascada con tarjetas -->
+      <div class="inherit-demo" style="margin-top: 2rem;">
+        <h3 class="inherit-demo-title">Ejemplo 2 — Herencia en cascada</h3>
+        <p class="section-desc" style="margin-bottom: 1.5rem;">
+          El contenedor padre define <code class="inline-code">font-family</code> y
+          <code class="inline-code">color</code>. Todas las tarjetas hijas los heredan
+          automáticamente sin necesidad de repetirlos.
+        </p>
+        <div class="cascade-parent">
+          <div class="cascade-card">
+            <div class="cascade-icon">🛸</div>
+            <h4>Propulsión</h4>
+            <p>Motores de cohete que convierten combustible en empuje para superar la gravedad terrestre.</p>
+          </div>
+          <div class="cascade-card">
+            <div class="cascade-icon">🛰️</div>
+            <h4>Satélites</h4>
+            <p>Artefactos en órbita que permiten comunicaciones, GPS y observación de la Tierra.</p>
+          </div>
+          <div class="cascade-card">
+            <div class="cascade-icon">🌌</div>
+            <h4>Astronomía</h4>
+            <p>Estudio del universo, sus galaxias, estrellas y los fenómenos físicos que los rigen.</p>
+          </div>
+          <div class="cascade-card">
+            <div class="cascade-icon">🧪</div>
+            <h4>Materiales</h4>
+            <p>Aleaciones y compuestos diseñados para soportar temperaturas y presiones extremas.</p>
+          </div>
+        </div>
+        <div class="inherit-note">
+          <span>💡</span>
+          <p>Las 4 tarjetas no definen <code>font-family</code> ni <code>color</code> base — los heredan del contenedor <code>.cascade-parent</code>. Esto es herencia CSS en acción.</p>
         </div>
       </div>
+
+      <!-- Ejemplo 3: Tabla de propiedades heredables -->
+      <div class="inherit-demo" style="margin-top: 2rem;">
+        <h3 class="inherit-demo-title">Ejemplo 3 — ¿Qué propiedades se heredan?</h3>
+        <div class="props-table-wrapper">
+          <table class="props-table">
+            <thead>
+              <tr>
+                <th>Propiedad CSS</th>
+                <th>¿Se hereda?</th>
+                <th>Ejemplo de uso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>color</code></td>
+                <td class="yes">✅ Sí</td>
+                <td>El color del texto se hereda a todos los hijos</td>
+              </tr>
+              <tr>
+                <td><code>font-family</code></td>
+                <td class="yes">✅ Sí</td>
+                <td>La fuente definida en body aplica a toda la página</td>
+              </tr>
+              <tr>
+                <td><code>font-size</code></td>
+                <td class="yes">✅ Sí</td>
+                <td>Los hijos pueden usar em/rem relativos al padre</td>
+              </tr>
+              <tr>
+                <td><code>line-height</code></td>
+                <td class="yes">✅ Sí</td>
+                <td>El interlineado se propaga a los elementos hijos</td>
+              </tr>
+              <tr>
+                <td><code>text-align</code></td>
+                <td class="yes">✅ Sí</td>
+                <td>La alineación del texto se hereda al contenido</td>
+              </tr>
+              <tr>
+                <td><code>background</code></td>
+                <td class="no">❌ No</td>
+                <td>Cada elemento define su propio fondo</td>
+              </tr>
+              <tr>
+                <td><code>margin</code></td>
+                <td class="no">❌ No</td>
+                <td>Los márgenes no se heredan, son del elemento</td>
+              </tr>
+              <tr>
+                <td><code>padding</code></td>
+                <td class="no">❌ No</td>
+                <td>El relleno tampoco se hereda entre elementos</td>
+              </tr>
+              <tr>
+                <td><code>border</code></td>
+                <td class="no">❌ No</td>
+                <td>Los bordes son exclusivos de cada elemento</td>
+              </tr>
+              <tr>
+                <td><code>width / height</code></td>
+                <td class="no">❌ No</td>
+                <td>Las dimensiones no se heredan automáticamente</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </div>
   </section>
-
-  <!-- SOBRE MÍ -->
-  <section id="sobre-mi">
-    <div class="container">
-      <div class="section-label">
-        <h2>Sobre mí</h2>
-        <span class="pill">WHO AM I</span>
-      </div>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>Soy <strong class="white">Diego Eduardo Cisneros</strong>, estudiante de ingeniería con una profunda fascinación por la tecnología y sus aplicaciones en el mundo real. Mi enfoque está en el sector tecnológico, con una rama de especialización hacia la <strong class="blue">ingeniería aeronáutica y espacial</strong>.</p>
-          <p>Me motiva entender cómo funcionan los sistemas complejos: desde el código que corre en tierra hasta los algoritmos que guían una nave por el espacio.</p>
-          <ul class="styled-list">
-            <li>Estudiante de Ingeniería</li>
-            <li>Interés en sistemas aeronáuticos y espaciales</li>
-            <li>Desarrollo web y programación aplicada</li>
-            <li>Análisis de datos e ingeniería de fluidos</li>
-            <li>Ciudad de México 🇲🇽</li>
-          </ul>
-          <div class="stats-row">
-            <div class="stat"><span>1.5</span><p>Años estudiando</p></div>
-            <div class="stat"><span>5</span><p>Proyectos realizados</p></div>
-            <div class="stat"><span>∞</span><p>Curiosidad</p></div>
-          </div>
-        </div>
-        <div class="about-img">
-          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=700&q=80" alt="Vista del espacio desde órbita" />
-        </div>
-      </div>
-      <div class="quote-block">
-        <p>"La Tierra es la cuna de la humanidad, pero uno no puede vivir en la cuna para siempre."</p>
-        <cite>— Konstantin Tsiolkovsky, pionero de la astronáutica</cite>
-      </div>
-    </div>
-  </section>
-
-  <!-- HABILIDADES -->
-  <section id="habilidades" class="bg-surface">
-    <div class="container">
-      <div class="section-label">
-        <h2>Habilidades</h2>
-        <span class="pill">SKILLS</span>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon">💻</div>
-          <h3>Desarrollo Web</h3>
-          <p>HTML, CSS y JavaScript. Construcción de páginas y herramientas interactivas desde cero.</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">📐</div>
-          <h3>Matemáticas &amp; EDOs</h3>
-          <p>Ecuaciones diferenciales, álgebra lineal y cálculo vectorial aplicados a la ingeniería.</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🌊</div>
-          <h3>Mecánica de Fluidos</h3>
-          <p>Análisis de flujo, ecuación de Bernoulli, medición de velocidad e instrumentación.</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">⚙️</div>
-          <h3>Ciencia de Materiales</h3>
-          <p>Curvas estrés-deformación, módulo de Young, fracturas dúctiles y frágiles.</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🐍</div>
-          <h3>Python &amp; Excel</h3>
-          <p>Análisis de datos, automatización con openpyxl, regresión lineal y visualización.</p>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">🔧</div>
-          <h3>Git &amp; GitHub</h3>
-          <p>Control de versiones, ramas, commits y despliegue con GitHub Pages.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TIMELINE -->
-  <section id="trayectoria">
-    <div class="container">
-      <div class="section-label">
-        <h2>Mi Trayectoria</h2>
-        <span class="pill">TIMELINE</span>
-      </div>
-      <p class="section-desc">Un recorrido por los momentos y logros más importantes de mi camino en la ingeniería.</p>
-      <div class="timeline">
-
-        <div class="timeline-item">
-          <div class="timeline-dot">🎓</div>
-          <div class="timeline-content">
-            <span class="timeline-date">2023</span>
-            <h4>Inicio de la carrera de Ingeniería</h4>
-            <p>Comienzo del camino universitario con materias de cálculo, física y química. Primer acercamiento formal a la ingeniería y sus fundamentos.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot">💻</div>
-          <div class="timeline-content">
-            <span class="timeline-date">2023</span>
-            <h4>Primeros pasos en programación</h4>
-            <p>Aprendizaje de Python para resolver problemas matemáticos y científicos. Introducción a la lógica de programación y estructuras de datos.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot">🌊</div>
-          <div class="timeline-content">
-            <span class="timeline-date">2024</span>
-            <h4>Mecánica de Fluidos I</h4>
-            <p>Laboratorios de medición de velocidad con instrumentos como Pitot y anemómetros. Aplicación de la ecuación de Bernoulli y análisis de datos con Excel.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot">⚙️</div>
-          <div class="timeline-content">
-            <span class="timeline-date">2024</span>
-            <h4>Ciencia de Materiales</h4>
-            <p>Análisis de curvas estrés-deformación para acero recocido y sin tratamiento. Cálculo del módulo de Young e identificación de tipos de fractura.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot">🌐</div>
-          <div class="timeline-content">
-            <span class="timeline-date">2025</span>
-            <h4>Desarrollo Web y GitHub</h4>
-            <p>Creación de páginas web con HTML y CSS. Manejo de repositorios con Git y publicación de proyectos con GitHub Pages.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-dot">🚀</div>
-          <div class="timeline-content">
-            <span class="timeline-date">Futuro</span>
-            <h4>Especialización Aeronáutica &amp; Espacial</h4>
-            <p>Objetivo de profundizar en dinámica de vuelo, propulsión y sistemas de guiado para contribuir al sector aeroespacial desde México.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- AERONÁUTICA -->
-  <section id="aeronautica" class="bg-surface">
-    <div class="container">
-      <div class="section-label">
-        <h2>Ingeniería Aeronáutica &amp; Espacial</h2>
-        <span class="pill">AEROSPACE</span>
-      </div>
-      <p class="section-desc">La ingeniería aeronáutica y espacial combina física avanzada, materiales de alto rendimiento, dinámica de fluidos y sistemas de control.</p>
-      <div class="aero-grid">
-        <div class="aero-card">
-          <div class="aero-card-num">Mach 25</div>
-          <h4>Velocidad orbital</h4>
-          <p>La ISS orbita a ~7.7 km/s completando una vuelta cada 90 minutos.</p>
-        </div>
-        <div class="aero-card">
-          <div class="aero-card-num">408 km</div>
-          <h4>Altitud de la ISS</h4>
-          <p>La ISS opera en órbita baja terrestre (LEO), con presencia humana continua desde el año 2000.</p>
-        </div>
-        <div class="aero-card">
-          <div class="aero-card-num">CFD</div>
-          <h4>Dinámica de Fluidos Computacional</h4>
-          <p>Herramienta esencial para simular el comportamiento del aire alrededor de alas y fuselajes.</p>
-        </div>
-        <div class="aero-card">
-          <div class="aero-card-num">ΔV</div>
-          <h4>Ecuación de Tsiolkovsky</h4>
-          <p>ΔV = Isp × g₀ × ln(m₀/m₁) — define el cambio de velocidad según masa de combustible e impulso.</p>
-        </div>
-        <div class="aero-card">
-          <div class="aero-card-num">Ti–Al</div>
-          <h4>Materiales aeroespaciales</h4>
-          <p>Aleaciones de titanio, aluminio y fibra de carbono por su resistencia y baja densidad.</p>
-        </div>
-        <div class="aero-card">
-          <div class="aero-card-num">GNC</div>
-          <h4>Guiado, Navegación y Control</h4>
-          <p>Sistemas que determinan posición, planifican trayectoria y ejecutan correcciones en vuelo.</p>
-        </div>
-      </div>
-      <img class="aero-banner" src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=1000&q=80" alt="Lanzamiento de cohete" />
-    </div>
-  </section>
-
-  <!-- PROYECTOS -->
-  <section id="proyectos">
-    <div class="container">
-      <div class="section-label">
-        <h2>Proyectos</h2>
-        <span class="pill">PROJECTS</span>
-      </div>
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-img-wrap">
-            <img class="project-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80" alt="Simulador orbital" />
-          </div>
-          <div class="project-body">
-            <h3>Simulador de Trayectoria Orbital</h3>
-            <p>Calcula y visualiza órbitas kepleranas usando ecuaciones de movimiento gravitacional.</p>
-            <div class="project-tags">
-              <span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span>
-            </div>
-            <a href="#" class="project-link">Ver proyecto →</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-img-wrap">
-            <img class="project-img" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80" alt="Visualizador EDOs" />
-          </div>
-          <div class="project-body">
-            <h3>Visualizador de EDOs</h3>
-            <p>Grafica soluciones de ecuaciones diferenciales con campos de pendientes y estabilidad.</p>
-            <div class="project-tags">
-              <span class="tag">Python</span><span class="tag">SciPy</span><span class="tag">Matplotlib</span>
-            </div>
-            <a href="#" class="project-link">Ver proyecto →</a>
-          </div>
-        </article>
-        <article class="project-card">
-          <div class="project-img-wrap">
-            <img class="project-img" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80" alt="Portfolio" />
-          </div>
-          <div class="project-body">
-            <h3>Este Portfolio</h3>
-            <p>Página web personal con HTML y CSS externo, publicada con GitHub Pages.</p>
-            <div class="project-tags">
-              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">GitHub Pages</span>
-            </div>
-            <a href="https://github.com/DiegoCisneros010" class="project-link" target="_blank">Ver en GitHub →</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section id="contacto" class="bg-surface">
-    <div class="container">
-      <div class="section-label">
-        <h2>Contacto</h2>
-        <span class="pill">GET IN TOUCH</span>
-      </div>
-      <div class="contact-wrapper">
-        <div class="contact-info">
-          <p>¿Tienes un proyecto tecnológico o aeroespacial en mente? Escríbeme, siempre estoy abierto a conectar con personas apasionadas.</p>
-          <div class="contact-links">
-            <a href="mailto:diego@email.com" class="contact-link"><span>📧</span> diego@email.com</a>
-            <a href="https://github.com/DiegoCisneros010" target="_blank" class="contact-link"><span>🐙</span> github.com/DiegoCisneros010</a>
-            <a href="https://linkedin.com/in/diego-cisneros" target="_blank" class="contact-link"><span>💼</span> LinkedIn — Diego Cisneros</a>
-          </div>
-        </div>
-        <form onsubmit="return false;">
-          <div>
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" />
-          </div>
-          <div>
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="tu@correo.com" />
-          </div>
-          <div>
-            <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" placeholder="¿En qué puedo ayudarte?"></textarea>
-          </div>
-          <button type="submit" class="form-btn">Enviar mensaje 🚀</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>Hecho con ❤️ por <strong>Diego Eduardo Cisneros</strong> · 2025 · Todos los derechos reservados</p>
-  </footer>
-
-</body>
-</html>
-
+  
