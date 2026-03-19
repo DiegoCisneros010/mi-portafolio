@@ -1,183 +1,129 @@
-/* ── HERENCIA DE ESTILOS ── */
+/* ── FLEXBOX ── */
 
-.inline-code {
-  font-family: 'Courier New', monospace;
-  font-size: .85rem;
-  color: var(--c-blue);
-  background: rgba(0,170,255,.08);
-  padding: .1rem .45rem;
-  border-radius: 4px;
-  border: 1px solid rgba(0,170,255,.2);
-}
-
-/* Contenedor del ejemplo */
-.inherit-demo {
+.flex-demo {
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
   padding: 1.75rem;
-  background: var(--c-surface);
+  background: var(--c-bg);
+  margin-bottom: 1.5rem;
 }
+.flex-demo:last-child { margin-bottom: 0; }
 
-.inherit-demo-title {
+.flex-demo-title {
   font-family: var(--ff-head);
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--c-white);
-  margin-bottom: 1.25rem;
+  font-weight: 700; font-size: 1rem;
+  color: var(--c-white); margin-bottom: .6rem;
   padding-bottom: .75rem;
   border-bottom: 1px solid var(--c-border);
 }
+.flex-demo-desc { font-size: .88rem; color: var(--c-muted); margin-bottom: 1.25rem; }
 
-/* Padre que define estilos heredables */
-.inherit-parent {
-  /* Estas propiedades se heredarán a todos los hijos */
-  font-family: var(--ff-head);
-  color: var(--c-blue);
-  line-height: 1.8;
-
-  padding: 1.25rem 1.5rem;
-  border: 2px solid rgba(0,170,255,.4);
-  border-radius: var(--radius);
-  background: rgba(0,170,255,.05);
-  box-shadow: 0 0 20px rgba(0,170,255,.08);
-}
-
-/* Hijo — hereda font-family, color y line-height del padre */
-.inherit-child {
-  margin-top: 1rem;
-  margin-left: 1.5rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid rgba(0,170,255,.25);
-  border-radius: 10px;
+/* Caja flex base */
+.flex-box {
+  display: flex;
+  gap: .6rem;
+  padding: .75rem;
   background: rgba(0,170,255,.04);
-  /* No define color ni font-family — los hereda */
-}
-
-/* Nieto — hereda a través de dos niveles */
-.inherit-grandchild {
-  margin-top: .75rem;
-  margin-left: 1.5rem;
-  padding: .85rem 1.1rem;
   border: 1px dashed rgba(0,170,255,.2);
   border-radius: 8px;
-  background: rgba(0,170,255,.03);
-  font-size: .9em; /* em = relativo al padre */
+  min-height: 56px;
 }
+.flex-tall { min-height: 100px; }
 
-/* Hijo que sobreescribe el color heredado */
-.inherit-child--override {
-  color: #38f9d7; /* sobreescribe el color azul del padre */
-  border-color: rgba(56,249,215,.3);
-  background: rgba(56,249,215,.04);
-}
+/* flex-direction */
+.flex-row         { flex-direction: row; }
+.flex-row-reverse { flex-direction: row-reverse; }
+.flex-col         { flex-direction: column; }
 
-.inherit-label {
-  font-size: .88rem;
-  margin: 0;
-}
+/* justify-content */
+.jc-start   { justify-content: flex-start; }
+.jc-center  { justify-content: center; }
+.jc-end     { justify-content: flex-end; }
+.jc-between { justify-content: space-between; }
+.jc-around  { justify-content: space-around; }
+.jc-evenly  { justify-content: space-evenly; }
 
-/* Nota informativa */
-.inherit-note {
+/* align-items */
+.ai-start   { align-items: flex-start; }
+.ai-center  { align-items: center; }
+.ai-end     { align-items: flex-end; }
+.ai-stretch { align-items: stretch; }
+
+/* Elementos hijos del demo */
+.flex-item {
   display: flex;
-  align-items: flex-start;
-  gap: .75rem;
-  margin-top: 1.25rem;
-  padding: 1rem 1.25rem;
-  background: rgba(0,170,255,.06);
-  border: 1px solid rgba(0,170,255,.2);
-  border-radius: 10px;
-  font-size: .88rem;
-  color: var(--c-muted);
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  padding: .4rem .8rem;
+  background: var(--c-blue);
+  color: #04080f;
+  font-family: var(--ff-head);
+  font-weight: 800;
+  font-size: .9rem;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(0,170,255,.3);
 }
-.inherit-note span { font-size: 1.2rem; flex-shrink: 0; }
-.inherit-note code {
-  font-family: 'Courier New', monospace;
-  font-size: .82rem;
-  color: var(--c-blue);
-  background: rgba(0,170,255,.08);
-  padding: .1rem .35rem;
-  border-radius: 4px;
-}
+.flex-item--tall { min-height: 70px; }
 
-/* Ejemplo cascada — padre define tipografía y color base */
-.cascade-parent {
-  /* Herencia: todos los hijos reciben estas propiedades */
-  font-family: var(--ff-body);
-  color: var(--c-text);
-  line-height: 1.6;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+/* Grids de ejemplos */
+.flex-showcase {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
-
-/* Las tarjetas NO definen font-family ni color — los heredan */
-.cascade-card {
-  padding: 1.4rem;
-  border: 1px solid var(--c-border);
-  border-radius: var(--radius);
-  background: var(--c-bg);
-  text-align: center;
-  transition: transform .25s, border-color .25s, box-shadow .25s;
+.flex-showcase-item {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  flex: 1;
+  min-width: 160px;
 }
-.cascade-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--c-blue);
-  box-shadow: 0 8px 28px rgba(0,170,255,.18);
-}
-.cascade-icon { font-size: 2rem; margin-bottom: .6rem; }
-.cascade-card h4 {
-  font-family: var(--ff-head);
-  font-weight: 700;
-  color: var(--c-blue); /* sobreescribe el color heredado */
-  margin-bottom: .4rem;
-  font-size: 1rem;
-}
-.cascade-card p {
-  font-size: .85rem;
-  color: var(--c-muted); /* sobreescribe el color heredado */
-}
-
-/* Tabla de propiedades */
-.props-table-wrapper {
-  overflow-x: auto;
-  border-radius: var(--radius);
-  border: 1px solid var(--c-border);
-}
-.props-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: .9rem;
-}
-.props-table thead {
-  background: rgba(0,170,255,.1);
-  font-family: var(--ff-head);
-}
-.props-table th {
-  padding: .9rem 1.25rem;
-  text-align: left;
-  color: var(--c-blue);
-  font-weight: 700;
-  font-size: .82rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-bottom: 1px solid var(--c-border);
-}
-.props-table td {
-  padding: .8rem 1.25rem;
-  border-bottom: 1px solid var(--c-border);
-  color: var(--c-muted);
-  vertical-align: middle;
-}
-.props-table tr:last-child td { border-bottom: none; }
-.props-table tr:hover td { background: rgba(0,170,255,.04); }
-.props-table td code {
+.flex-showcase-label {
   font-family: 'Courier New', monospace;
-  font-size: .82rem;
+  font-size: .78rem;
   color: var(--c-blue);
-  background: rgba(0,170,255,.08);
-  padding: .1rem .4rem;
-  border-radius: 4px;
+  font-weight: 600;
 }
-.props-table td.yes { color: #38f9d7; font-weight: 600; }
-.props-table td.no  { color: #ff6b6b; font-weight: 600; }
+
+.flex-justify-grid {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.flex-justify-item {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+/* Ejemplo flex-wrap aplicado a tecnologías */
+.flex-tech-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: center;
+}
+.flex-tech-item {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .7rem 1.2rem;
+  border: 1px solid rgba(0,170,255,.25);
+  border-radius: 999px;
+  background: rgba(0,170,255,.07);
+  color: var(--c-text);
+  font-size: .9rem;
+  font-weight: 500;
+  flex-grow: 1;
+  justify-content: center;
+  transition: background .2s, box-shadow .2s, border-color .2s;
+}
+.flex-tech-item:hover {
+  background: rgba(0,170,255,.15);
+  border-color: var(--c-blue);
+  box-shadow: 0 0 16px rgba(0,170,255,.2);
+}
+.flex-tech-item--wide {
+  flex-grow: 2;
+}

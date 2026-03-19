@@ -1,132 +1,232 @@
-<!-- HERENCIA DE ESTILOS -->
-  <section id="herencia">
+<!-- FLEXBOX -->
+  <section id="flexbox" class="bg-surface">
     <div class="container">
       <div class="section-label">
-        <h2>Herencia de Estilos CSS</h2>
-        <span class="pill">INHERITANCE</span>
+        <h2>CSS Flexbox</h2>
+        <span class="pill">FLEXBOX</span>
       </div>
       <p class="section-desc">
-        En CSS, los elementos hijos heredan propiedades de sus padres como
-        <code class="inline-code">color</code>, <code class="inline-code">font-family</code>,
-        <code class="inline-code">font-size</code> y <code class="inline-code">line-height</code>.
-        Aquí se muestra cómo funciona en la práctica.
+        Flexbox es un modelo de diseño CSS que permite distribuir y alinear elementos
+        dentro de un contenedor de forma flexible. Aquí se muestran sus propiedades
+        principales aplicadas a elementos reales del portfolio.
       </p>
 
-      <!-- Ejemplo 1: Herencia de tipografía -->
-      <div class="inherit-demo">
-        <h3 class="inherit-demo-title">Ejemplo 1 — Herencia de tipografía</h3>
-        <div class="inherit-parent">
-          <p class="inherit-label">🔵 Elemento padre — define: <code>font-family</code>, <code>color</code>, <code>line-height</code></p>
-          <div class="inherit-child">
-            <p class="inherit-label">↳ Hijo 1 — hereda todo del padre</p>
-            <div class="inherit-grandchild">
-              <p class="inherit-label">↳ ↳ Nieto — sigue heredando aunque esté 2 niveles abajo</p>
+      <!-- Ejemplo 1: flex-direction -->
+      <div class="flex-demo">
+        <h3 class="flex-demo-title">Ejemplo 1 — <code class="inline-code">flex-direction</code></h3>
+        <p class="flex-demo-desc">Controla la dirección en que se colocan los elementos hijos dentro del contenedor.</p>
+        <div class="flex-showcase">
+          <div class="flex-showcase-item">
+            <span class="flex-showcase-label">row (default)</span>
+            <div class="flex-box flex-row">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
             </div>
           </div>
-          <div class="inherit-child inherit-child--override">
-            <p class="inherit-label">↳ Hijo 2 — hereda pero <strong>sobreescribe</strong> el color</p>
+          <div class="flex-showcase-item">
+            <span class="flex-showcase-label">row-reverse</span>
+            <div class="flex-box flex-row-reverse">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+          <div class="flex-showcase-item">
+            <span class="flex-showcase-label">column</span>
+            <div class="flex-box flex-col">
+              <div class="flex-item">A</div>
+              <div class="flex-item">B</div>
+              <div class="flex-item">C</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Ejemplo 2: Herencia en cascada con tarjetas -->
-      <div class="inherit-demo" style="margin-top: 2rem;">
-        <h3 class="inherit-demo-title">Ejemplo 2 — Herencia en cascada</h3>
-        <p class="section-desc" style="margin-bottom: 1.5rem;">
-          El contenedor padre define <code class="inline-code">font-family</code> y
-          <code class="inline-code">color</code>. Todas las tarjetas hijas los heredan
-          automáticamente sin necesidad de repetirlos.
-        </p>
-        <div class="cascade-parent">
-          <div class="cascade-card">
-            <div class="cascade-icon">🛸</div>
-            <h4>Propulsión</h4>
-            <p>Motores de cohete que convierten combustible en empuje para superar la gravedad terrestre.</p>
+      <!-- Ejemplo 2: justify-content -->
+      <div class="flex-demo">
+        <h3 class="flex-demo-title">Ejemplo 2 — <code class="inline-code">justify-content</code></h3>
+        <p class="flex-demo-desc">Alinea los elementos a lo largo del eje principal (horizontal por defecto).</p>
+        <div class="flex-justify-grid">
+          <div class="flex-justify-item">
+            <span class="flex-showcase-label">flex-start</span>
+            <div class="flex-box jc-start">
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+            </div>
           </div>
-          <div class="cascade-card">
-            <div class="cascade-icon">🛰️</div>
-            <h4>Satélites</h4>
-            <p>Artefactos en órbita que permiten comunicaciones, GPS y observación de la Tierra.</p>
+          <div class="flex-justify-item">
+            <span class="flex-showcase-label">center</span>
+            <div class="flex-box jc-center">
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+            </div>
           </div>
-          <div class="cascade-card">
-            <div class="cascade-icon">🌌</div>
-            <h4>Astronomía</h4>
-            <p>Estudio del universo, sus galaxias, estrellas y los fenómenos físicos que los rigen.</p>
+          <div class="flex-justify-item">
+            <span class="flex-showcase-label">flex-end</span>
+            <div class="flex-box jc-end">
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+            </div>
           </div>
-          <div class="cascade-card">
-            <div class="cascade-icon">🧪</div>
-            <h4>Materiales</h4>
-            <p>Aleaciones y compuestos diseñados para soportar temperaturas y presiones extremas.</p>
+          <div class="flex-justify-item">
+            <span class="flex-showcase-label">space-between</span>
+            <div class="flex-box jc-between">
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+            </div>
           </div>
-        </div>
-        <div class="inherit-note">
-          <span>💡</span>
-          <p>Las 4 tarjetas no definen <code>font-family</code> ni <code>color</code> base — los heredan del contenedor <code>.cascade-parent</code>. Esto es herencia CSS en acción.</p>
+          <div class="flex-justify-item">
+            <span class="flex-showcase-label">space-around</span>
+            <div class="flex-box jc-around">
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+            </div>
+          </div>
+          <div class="flex-justify-item">
+            <span class="flex-showcase-label">space-evenly</span>
+            <div class="flex-box jc-evenly">
+              <div class="flex-item">1</div>
+              <div class="flex-item">2</div>
+              <div class="flex-item">3</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Ejemplo 3: Tabla de propiedades heredables -->
-      <div class="inherit-demo" style="margin-top: 2rem;">
-        <h3 class="inherit-demo-title">Ejemplo 3 — ¿Qué propiedades se heredan?</h3>
+      <!-- Ejemplo 3: align-items -->
+      <div class="flex-demo">
+        <h3 class="flex-demo-title">Ejemplo 3 — <code class="inline-code">align-items</code></h3>
+        <p class="flex-demo-desc">Alinea los elementos a lo largo del eje secundario (vertical por defecto).</p>
+        <div class="flex-showcase">
+          <div class="flex-showcase-item">
+            <span class="flex-showcase-label">flex-start</span>
+            <div class="flex-box flex-tall ai-start">
+              <div class="flex-item">A</div>
+              <div class="flex-item flex-item--tall">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+          <div class="flex-showcase-item">
+            <span class="flex-showcase-label">center</span>
+            <div class="flex-box flex-tall ai-center">
+              <div class="flex-item">A</div>
+              <div class="flex-item flex-item--tall">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+          <div class="flex-showcase-item">
+            <span class="flex-showcase-label">flex-end</span>
+            <div class="flex-box flex-tall ai-end">
+              <div class="flex-item">A</div>
+              <div class="flex-item flex-item--tall">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+          <div class="flex-showcase-item">
+            <span class="flex-showcase-label">stretch</span>
+            <div class="flex-box flex-tall ai-stretch">
+              <div class="flex-item">A</div>
+              <div class="flex-item flex-item--tall">B</div>
+              <div class="flex-item">C</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ejemplo 4: flex-wrap y flex aplicado -->
+      <div class="flex-demo">
+        <h3 class="flex-demo-title">Ejemplo 4 — <code class="inline-code">flex-wrap</code> y <code class="inline-code">flex-grow</code></h3>
+        <p class="flex-demo-desc">Aplicado a las tecnologías que uso — los elementos se envuelven y crecen para llenar el espacio.</p>
+        <div class="flex-tech-container">
+          <div class="flex-tech-item">
+            <span>💻</span> HTML5
+          </div>
+          <div class="flex-tech-item flex-tech-item--wide">
+            <span>🎨</span> CSS3 &amp; Flexbox
+          </div>
+          <div class="flex-tech-item">
+            <span>🐍</span> Python
+          </div>
+          <div class="flex-tech-item">
+            <span>🔧</span> Git
+          </div>
+          <div class="flex-tech-item flex-tech-item--wide">
+            <span>🚀</span> GitHub Pages
+          </div>
+          <div class="flex-tech-item">
+            <span>📐</span> Matemáticas
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabla resumen -->
+      <div class="flex-demo">
+        <h3 class="flex-demo-title">Resumen de propiedades Flexbox</h3>
         <div class="props-table-wrapper">
           <table class="props-table">
             <thead>
               <tr>
-                <th>Propiedad CSS</th>
-                <th>¿Se hereda?</th>
-                <th>Ejemplo de uso</th>
+                <th>Propiedad</th>
+                <th>Se aplica en</th>
+                <th>Descripción</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><code>color</code></td>
-                <td class="yes">✅ Sí</td>
-                <td>El color del texto se hereda a todos los hijos</td>
+                <td><code>display: flex</code></td>
+                <td>Contenedor</td>
+                <td>Activa el modo Flexbox en el contenedor</td>
               </tr>
               <tr>
-                <td><code>font-family</code></td>
-                <td class="yes">✅ Sí</td>
-                <td>La fuente definida en body aplica a toda la página</td>
+                <td><code>flex-direction</code></td>
+                <td>Contenedor</td>
+                <td>Define la dirección del eje principal (row / column)</td>
               </tr>
               <tr>
-                <td><code>font-size</code></td>
-                <td class="yes">✅ Sí</td>
-                <td>Los hijos pueden usar em/rem relativos al padre</td>
+                <td><code>justify-content</code></td>
+                <td>Contenedor</td>
+                <td>Alineación en el eje principal</td>
               </tr>
               <tr>
-                <td><code>line-height</code></td>
-                <td class="yes">✅ Sí</td>
-                <td>El interlineado se propaga a los elementos hijos</td>
+                <td><code>align-items</code></td>
+                <td>Contenedor</td>
+                <td>Alineación en el eje secundario</td>
               </tr>
               <tr>
-                <td><code>text-align</code></td>
-                <td class="yes">✅ Sí</td>
-                <td>La alineación del texto se hereda al contenido</td>
+                <td><code>flex-wrap</code></td>
+                <td>Contenedor</td>
+                <td>Permite que los elementos se envuelvan en varias filas</td>
               </tr>
               <tr>
-                <td><code>background</code></td>
-                <td class="no">❌ No</td>
-                <td>Cada elemento define su propio fondo</td>
+                <td><code>gap</code></td>
+                <td>Contenedor</td>
+                <td>Espacio entre elementos hijos</td>
               </tr>
               <tr>
-                <td><code>margin</code></td>
-                <td class="no">❌ No</td>
-                <td>Los márgenes no se heredan, son del elemento</td>
+                <td><code>flex-grow</code></td>
+                <td>Hijo</td>
+                <td>Cuánto crece un hijo para llenar el espacio disponible</td>
               </tr>
               <tr>
-                <td><code>padding</code></td>
-                <td class="no">❌ No</td>
-                <td>El relleno tampoco se hereda entre elementos</td>
+                <td><code>flex-shrink</code></td>
+                <td>Hijo</td>
+                <td>Cuánto se encoge un hijo si no hay suficiente espacio</td>
               </tr>
               <tr>
-                <td><code>border</code></td>
-                <td class="no">❌ No</td>
-                <td>Los bordes son exclusivos de cada elemento</td>
+                <td><code>align-self</code></td>
+                <td>Hijo</td>
+                <td>Alineación individual que sobreescribe align-items</td>
               </tr>
               <tr>
-                <td><code>width / height</code></td>
-                <td class="no">❌ No</td>
-                <td>Las dimensiones no se heredan automáticamente</td>
+                <td><code>order</code></td>
+                <td>Hijo</td>
+                <td>Controla el orden visual de un elemento hijo</td>
               </tr>
             </tbody>
           </table>
